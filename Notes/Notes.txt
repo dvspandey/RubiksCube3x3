@@ -1,0 +1,15 @@
+TOP layer: Step 1 - Create Daisy
+
+HOLDING YOUR RUBIK’S CUBE
+
+Begin by holding your Rubik’s Cube with the YELLOW CENTER piece on the UP (U) face.
+
+Action-1
+=========
+Look at the top layer to locate the EDGE pieces that have a WHITE tile. Leave them where they are.
+
+See example to the right and notice that at this stage it is okay if the white tile is not touching the YELLOW CENTER piece.
+
+Action-2
+=========
+Look at the middle layer. Move EDGE pieces that have a WHITE tile from the MIDDLE layer into the top layer

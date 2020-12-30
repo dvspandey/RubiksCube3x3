@@ -1,0 +1,298 @@
+1> check how many white on appropriate place {001,010,012,021}
+	and check aftre compleate one operation for step1
+	check: how many white correct position if any time we get 4 white of then immidiatly 	stop this process!
+
+> UP SIDE DOWN
+	> SIDE ----> middle layer ----> top layer ----> buttom layer
+
+> SIDE
+  ====	
+middle layer
+------------
+	> if white in [(1,2,3,4)][1][(0,2)] then use rotation
+		> if [1][1][0] then L'  & check 
+		> if [1][1][2] then R	& check 
+
+		> if [2][1][0] then F' 	& check 
+		> if [2][1][2] then B	& check 
+
+		>  if [3][1][0] then R'	& check 
+		>  if [3][1][2] then L 	& check 
+
+		>  if [4][1][0] then B'	& check 
+		>  if [4][1][2] then F	& check 
+
+
+
+_________________________________________________________________________________ 
+> DOWN										| 
+  ----										| 
+										| 
+> if white found down {501,510,522,512} then rotate 180*			| 
+	> if white found [5][2][1] then 2(F/F')		note: /   ----> OR	| 
+	> if white found [5][1][0] then 2(R/R')					| 
+	> if white found [5][0][1] then 2(B/B')					| 
+	> if white found [5][1][2] then 2(L/L')					| 
+										| 
+________________________________________________________________________________| 
+                                                                                  
+
+
+
+top layer
+--------- (101,201,301,401)
+
+	> if white found [1][0][1] then FR/F'L'  
+	> if white found [2][0][1] then RB/R'F'
+	> if white found [3][0][1] then BL/B'R'
+	> if white found [4][0][1] then LF/L'B'
+
+
+
+bottom layer
+--------- (121,221,321,421)
+
+        buttom layer go top daisy which need now		buttom layer go buttom daisy which no need now 
+	> if white found [1][2][1] then F'R/FL'		|	> if white found [1][2][1] then F'R'/FL        
+	> if white found [2][2][1] then R'B/RF'		|	> if white found [2][2][1] then R'B'/RF        
+	> if white found [3][2][1] then B'L/BR'		|	> if white found [3][2][1] then B'L'/BR        
+	> if white found [4][2][1] then L'F/LB'		|	> if white found [4][2][1] then L'F'/LB        
+
+
+else part
+=========
+3 white get their appropriate position but one place not find its white then read that location[001/010/012/021] where not have white and then chech 'after rotate UP'  
+get one of above place and check [(110/112)/(210/212)/(310/312)/(410/412)]
+
+	unfounded
+	> 001	after rotate 
+		> 410 	------> B' 
+		> 212	------> B
+	> 010
+		> 110 	------> L'  
+		> 312 	------> L 
+	> 012*
+		> 310 	------> R'  
+		> 112 	------> R
+	> 021
+		> 210 	------> F'
+		> 412 	------> F
+
+********************************************************************************************
+
+> UP
+  ==
+
+> if any time we get 4 white of then immidiatly stop this process!
+	> now rotate up and find W/B ---> btw white/Blue center when get rotate it 2(F/F') (180)
+	> now rotate up and find W/R ---> btw white/Red center when get rotate it 2(R/R')
+	> now rotate up and find W/G ---> btw white/Green center when get rotate it 2(B/B')
+	> now rotate up and find W/O ---> btw white/Orange center when get rotate it 2(L/L')
+
+
+********************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*********************************************** Code RecycleBin ********************************************
+privious Logic code
+-------------------
+
+	static char[][][] middleLayer(char[][][] cube){			 // Step1: top have white cross with center yellow  [Create Daisy]
+
+		//------------------------Middle layer-------------------------------------				
+		//middle((10,fix[11],12)*4 ----> in face(1,2,3,4))
+		//middle
+		againCk : while(true){
+			for(int z=1; z<5; z++){
+				for(int x=1; x<2; x++){
+					for(int y=0; y<cube[z][x].length; y++){
+						if(x==1 && y==1){
+							continue;
+						}
+						if( 'W' == cube[z][x][y]){ // if W is in middile layer then detect location of it and rotate using best way.
+							cube = bestWay(z,x,y,cube);
+							System.out.println("'W' occured! ");
+							//continue againCk;
+						}
+					}	
+				}
+			}
+			break againCk;
+		}
+	
+		return cube;
+	}
+
+
+
+	// for middle if get 'W' in step 1
+	static char[][][] bestWay(int z1,int x1,int y1,char[][][] cube){ //z = face, x = row, y = column 
+	
+		again : while(true){
+			for(int y=0;y<3;y++){
+				if(cube[z1][0][y] == 'W'){ //then dont rotate face but rotate top
+					//rotate top U' or U  //note here we can select when we should use U or U' buy checking left and right face,
+					cube = UpFlip.flipCounter(cube);					  //if rite sige [z1(right face)][0][y] column no 'W' then rotate U' else  rotate U 
+					continue again;
+				}
+			}
+			// F'  {if 'W' in right side cube[z][1][2] ------> F'} or F'  {if 'W' in left side cube[z][1][0] ------> F}
+			if(y1 == 0){
+				//F
+				cube = FrontFlip.flip(cube);
+
+			}else{
+				//F'
+    			cube = FrontFlip.flipCounter(cube);
+			}
+			
+			break again;
+		}
+	
+		return cube;
+	}
+
+//----------------------------------------------------------End middle layer funtionality---------------------------------------------------------------------------------
+
+
+
+
+
+
+/*  ********************************* OLD LOGIC White Cross at BUTTOM ***************
+						// Faild Logic
+
+	static char[][][] up(char[][][] cube){
+		//{001,010,012,021}
+		int count = 0;
+		while(true){ // for face 1
+			if(cube[5][1][1]  == cube[0][2][1]){
+				if(cube[1][1][1] == cube[1][0][1]){
+					//rotate 2(F/F')	
+					cube = FrontFlip.flip(cube);
+					cube = FrontFlip.flip(cube);
+					System.out.println("2F");
+					break;
+				}else if(count==4){
+						System.out.println("Not found edge btw correct centers!!\n\t something went Wrong.");
+						break;
+				}else{
+					// U/U' 
+					cube = UpFlip.flip(cube);
+					System.out.println("U");
+					count++;
+				}
+			}else{
+				System.out.println("Daisy not found 1");				
+			}
+		}
+
+		count = 0;
+		while(true){ // for face 2
+			if(cube[5][1][1]  == cube[0][1][2]){
+				if(cube[2][1][1] == cube[2][0][1]){
+					//rotate 2(R/R')
+					cube = RightFlip.flip(cube);
+					cube = RightFlip.flip(cube);
+					System.out.println("2R");
+					break;
+				}else if(count==4){
+						System.out.println("Not found edge btw correct centers!!\n\t something went Wrong.");
+						break;
+				}else{
+					// U/U'
+					cube = UpFlip.flip(cube);
+					System.out.println("U");
+					count++;
+				}
+			}else{
+				System.out.println("Daisy not found 2");
+				break;
+			}
+		}
+
+		count = 0;
+		while(true){ // for face 3
+			if(cube[5][1][1]  == cube[0][0][1]){
+				if(cube[3][1][1] == cube[3][0][1]){
+					//rotate 2(B/B')	
+					cube = BackFlip.flip(cube);
+					cube = BackFlip.flip(cube);
+					System.out.println("2B");
+					break;
+				}else if(count==4){
+						System.out.println("Not found edge btw correct centers!!\n\t something went Wrong.");
+						break;
+				}else{
+					// U/U'
+					cube = UpFlip.flip(cube);
+					System.out.println("U");
+					count++;
+				}
+			}else{
+				System.out.println("Daisy not found 3");
+				break;
+			}
+		}
+
+		count = 0;
+		while(true){ // for face 4
+			if(cube[5][1][1]  == cube[0][1][0]){
+				if(cube[4][1][1] == cube[4][0][1]){
+					//rotate 2(L/L')
+					cube = LeftFlip.flip(cube);
+					cube = LeftFlip.flip(cube);
+					System.out.println("2L");
+					break;
+				}else if(count==4){
+						System.out.println("Not found edge btw correct centers!!\n\t something went Wrong.");
+						break;
+				}else{
+					// U/U'
+					cube = UpFlip.flip(cube);
+					System.out.println("U");
+					count++;
+				}
+			}else{
+				System.out.println("Daisy not found 4");
+				break;
+			}
+		}
+
+
+		return cube;
+	} // End up Method
+
+*/
+
+*********************************************** Code RecycleBin End ********************************************
+
+
+
+
+
+
+
