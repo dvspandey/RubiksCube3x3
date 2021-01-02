@@ -130,7 +130,7 @@ class Roter_2_0{
 
 		int a = vaidCube(cube);
 		System.out.println("value of a: "+a);
-/*
+
 //****************************** Step1 calling Start **************************		  
 		  try{
 			  if(a==0){
@@ -154,14 +154,14 @@ class Roter_2_0{
 			}
 			System.out.println();
 		}
-*/
-/*
+
+
 //****************************** Step2 calling Start **************************		  
 		if(a==0){
 			   cube = Step2.step2Main(cube);
 		  }
 //****************************** Step2 calling End ****************************		 																		   
-*/	
+	
 
 
 		//after solve
