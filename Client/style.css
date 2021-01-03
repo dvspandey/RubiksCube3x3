@@ -113,3 +113,29 @@ body{
     font-size: 0.8rem;
     letter-spacing: 1px;
 }
+
+@media(max-width: 1250px){
+    .md-width{
+        grid-template-columns: 4fr 1fr;
+    }
+    .md-width img{
+        width: 100%;
+    }
+    .sm-width{
+        padding: 1rem;
+    }
+    .sm-width h1{
+        font-size: 1.2rem;
+        margin-top: 5rem;
+    }
+    .sm-width form label{
+        font-size: 0.9rem;
+    }
+    .sm-width form input{
+        font-size: 0.8rem;
+        margin: .8rem 0;
+    }
+    .head-title{
+        font-size: 1.5rem;
+    }
+}
