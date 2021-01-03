@@ -16,13 +16,17 @@ body{
     height: 100vh;
     background-color: #EAF2FB;
 }
-.md-width{
+.inner-welcome{
     width: 60%;
+    height: 100%;
+    margin: auto;
+}
+.md-width{
+    width: 100%;
     height: 55vh;
     grid-template-columns: repeat(2,1fr);
     display: grid;
     grid-gap: 1rem;
-    margin: 0 auto;
     margin-bottom: 2rem;
     margin-top: 1.5rem;
     background-color: white;
@@ -48,7 +52,6 @@ body{
 }
 .sm-width form{
     width: 60%;
-    height: 50%;
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
@@ -95,7 +98,6 @@ body{
     border-bottom: 2px solid rgba(17,187,223,1);
 }
 .head-title{
-    margin-left: 22.5rem;
     font-family:'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     font-size: 2rem;
@@ -103,8 +105,9 @@ body{
     letter-spacing: 5px;
     margin-bottom: .5rem;
 }
-.footer{
-    margin: 2rem auto;
+.footer h3{
+    margin: 3rem 0;
+    text-align: center;
     font-family:'Hind', sans-serif;
     color: #576574;
     font-size: 0.8rem;
