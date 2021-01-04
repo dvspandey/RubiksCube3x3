@@ -81,7 +81,7 @@ class Roter_2_0{
  
 		
 		};
-/*		
+		
    //		Scan by user
 
 		 		Scanner scn = new Scanner(System.in);
@@ -90,7 +90,7 @@ class Roter_2_0{
 		for(int z=0; z<cubeTemp.length; z++){
 			System.out.println("\nFace: "+z);
 			for(int x=0; x<cubeTemp[z].length; x++){
-				for(int y=0; y<cubeTemp[z][x].length; y++){
+				for(int y=0; y<cubeTemp[z][x].length; y++) {
 					cubeTemp[z][x][y] = scn.next().charAt(0);
 				}
 			}
@@ -111,9 +111,9 @@ class Roter_2_0{
 
 
 		cube = cubeTemp;
-*/      
+      
 		//cube = Roter_2_0.cube;  //class level variable call Or static variable call
-/**/
+/**/	
 
 		// before  solve
 		for(int z=0; z<cube.length; z++){
@@ -158,6 +158,12 @@ class Roter_2_0{
 
 //****************************** Step2 calling Start **************************		  
 		if(a==0){
+				cube = RightFlip.flip(cube);
+				cube = RightFlip.flip(cube);
+				cube = MiddleFlip.flipV(cube);
+				cube = MiddleFlip.flipV(cube);
+				cube = LeftFlip.flipCounter(cube);
+				cube = LeftFlip.flipCounter(cube);
 			   cube = Step2.step2Main(cube);
 		  }
 //****************************** Step2 calling End ****************************		 																		   
