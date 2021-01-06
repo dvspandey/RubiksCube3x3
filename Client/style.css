@@ -139,6 +139,7 @@ body{
 }
 .md-width-dash{
     width: 100%;
+    height: 120vh;
     margin-bottom: 2rem;
     margin-top: 1.5rem;
     display: flex;
@@ -179,6 +180,7 @@ body{
 .md-width-dash-faceContainer{
     display: grid;
     width: 80%;
+    height: 100%;
     /* border: 1px solid black; */
     grid-template-rows: repeat(3,1fr);
 }
@@ -196,11 +198,11 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.md-width-dash-faceContainer-inner-in img{
+/* .md-width-dash-faceContainer-inner-in img{
     width: 50%;
     height: 80%;
     cursor: pointer;
-}
+} */
 .md-width-dash-faceContainer-inner-in h3{
     font-family:'Hind', sans-serif;
     color: #373e46;
@@ -255,6 +257,7 @@ body{
     color: #ffffff;
     border: none;
     border-radius: 0.3rem;
+    outline: none;
 }
 .btn-sm:hover{
     opacity: 0.9;
@@ -368,31 +371,98 @@ body{
 }
 .color-picker-lower-box1{
     background-color: red;
+    border: 2px solid black;
     cursor: pointer;
 }
 .color-picker-lower-box2{
     background-color: yellow;
+    border: 2px solid black;
     cursor: pointer;
 }
 .color-picker-lower-box3{
     background-color: blue;
+    border: 2px solid black;
     cursor: pointer;
 }
 .color-picker-lower-box4{
     background-color: white;
+    border: 2px solid black;
     cursor: pointer;
 }
 .color-picker-lower-box5{
     background-color: orange;
+    border: 2px solid black;
     cursor: pointer;
 }
 .color-picker-lower-box6{
     background-color: green;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+/* Designing for dashboard face */
+
+.color-filler-rows-dash{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    width: 50%;
+    height: 80%;
+    cursor: pointer;
+}
+.color-filler-row-dash{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.color-filler-box-dash{
+    border: 2px solid black;
+}
+
+
+
+/* Error styling */
+.error{
+    border: 2px solid #fa2743;
+    display: none;
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding: .4rem 0;
+    background-color: #ff7a8c83;
+    animation-name: errorSlow;
+    animation-duration: .5s;
+}
+.error h3{
+    font-family: 'Hind', sans-serif;
+    color: #fa2743;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.error h5{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    right: 10px;
+    color: #fa2743;
     cursor: pointer;
 }
 
 
 /* animation keyframes */
+
+@keyframes errorSlow{
+    from{
+        width: 0;
+    }
+    to{
+        width: 90%;
+    }
+}
+
 
 @keyframes slowModal{
     from{
