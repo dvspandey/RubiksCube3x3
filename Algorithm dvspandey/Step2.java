@@ -1,4 +1,5 @@
-/*
+/* The White Corners
+   =================
 
 Yellow	<---upset to----> White 
 Blue	<---upset to----> Green
@@ -17,6 +18,18 @@ Red		<---upset to----> Orange
 		cube = MiddleFlip.flipV(cube);
 		cube = LeftFlip.flipCounter(cube);
 		cube = LeftFlip.flipCounter(cube);
+
+NOTE: if any time You got Unexpected result through possibility3, possibility4 then remove below given code,
+
+			if(cube[face][2][2] == cube[0][1][1] && cube[face+1][2][0] == cube[2][1][1]){
+				cube = rigntAlgo(cube,face);
+			}else{
+				System.out.println("cube[2][2][0] == cube[2][1][1]--------> possibility4 False, rotate D' & find correct center");
+			}
+
+	And then call direct 
+			cube = colorFindLogicRignt(cube, face);
+		then it will fid correct place for color and high chance is there your problem will solve.
 
 */
 
@@ -63,7 +76,7 @@ class Step2{
 
 		return cube;
 	}// end step2Main
-
+/*
 	static boolean check(char[][][] cube){
 		if(cube[1][0][1]==cube[1][1][1] && cube[2][0][1]==cube[2][1][1] && cube[3][0][1]==cube[3][1][1] && cube[4][0][1]==cube[4][1][1]){
 			if((cube[1][0][0]==cube[1][1][1] && cube[2][0][0]==cube[2][1][1] && cube[3][0][0]==cube[3][1][1] && cube[4][0][0]==cube[4][1][1])
@@ -78,7 +91,7 @@ class Step2{
 			return true;
 		}
 	}
-	
+*/	
 	static char[][][] makeReady(char[][][] cube){
 		cube = rightCornerPice(cube);
 		cube = leftButtomPice(cube);
@@ -390,15 +403,16 @@ class Step2{
 				// call FD'F'D2 | cube = possibility3Algo(cube,j);
 				// then Right algo| cube = rigntAlgo(cube,j);
 				cube = possibility3Algo(cube,j);
-				//cube = rigntAlgo(cube,j);
-//---------------------------------------------------------------------
+				
+				cube = colorFindLogicRignt(cube, j);
+/*//---------------------------------------------------------------------// Why i comment this code Check Note at Top of that file.
 			if(cube[j][2][2] == cube[0][1][1] && cube[j+1][2][0] == cube[j+1][1][1]){
 				cube = rigntAlgo(cube,j);
 			}else{
 				System.out.println("cube[j+1][2][0] == cube[j+1][1][1]--------> [possibility3] centerSetting False, rotate D' & find correct center");
 			}
 //---------------------------------------------------------------------
-				System.out.println("centerSetting Success.. ");
+*/				System.out.println("centerSetting Success.. ");
 				break;
 			}else{
 				System.out.println("centerSetting white(true)");
@@ -469,44 +483,49 @@ class Step2{
 			cube = RightFlip.flipCounter(cube); 
 			cube = DownFlip.flip(cube);
 			cube = RightFlip.flip(cube);
-			if(cube[1][2][2] == cube[0][1][1] && cube[2][2][0] == cube[2][1][1]){
+			
+			cube = colorFindLogicRignt(cube, 1);
+			/*if(cube[1][2][2] == cube[0][1][1] && cube[2][2][0] == cube[2][1][1]){ // Why i comment this code Check Note at Top of that file.
 				cube = rigntAlgo(cube,1);
 			}else{
 				System.out.println("cube[2][2][0] == cube[2][1][1]--------> possibility4 False, rotate D' & find correct center");
-			}
+			}*/
 		}else if(cube[2][0][2]==cube[0][1][1]){
 			// B'DB
 			cube = BackFlip.flipCounter(cube); 
 			cube = DownFlip.flip(cube);
 			cube = BackFlip.flip(cube); 
 
-			if(cube[2][2][2] == cube[0][1][1] && cube[3][2][0] == cube[3][1][1]){
+			cube = colorFindLogicRignt(cube, 2);
+			/*if(cube[2][2][2] == cube[0][1][1] && cube[3][2][0] == cube[3][1][1]){
 				cube = rigntAlgo(cube,2);
 			}else{
 				System.out.println("cube[3][2][0] == cube[3][1][1]--------> possibility4 False, rotate D' & find correct center");
-			}
+			}*/
 		}else if(cube[3][0][2]==cube[0][1][1]){
 			// L'DL
 			cube = LeftFlip.flipCounter(cube); 
 			cube = DownFlip.flip(cube);
 			cube = LeftFlip.flip(cube);
 
-			if(cube[3][2][2] == cube[0][1][1] && cube[4][2][0] == cube[4][1][1]){
+			cube = colorFindLogicRignt(cube, 3);
+			/*if(cube[3][2][2] == cube[0][1][1] && cube[4][2][0] == cube[4][1][1]){
 				cube = rigntAlgo(cube,3);
 			}else{
 				System.out.println("cube[4][2][0] == cube[4][1][1]--------> possibility4 False, rotate D' & find correct center");
-			}
+			}*/
 		}else if(cube[4][0][2]==cube[0][1][1]){
 			// F'DF
 			cube = FrontFlip.flipCounter(cube); 
 			cube = DownFlip.flip(cube);
 			cube = FrontFlip.flip(cube);
-
-			if(cube[4][2][2] == cube[0][1][1] && cube[1][2][0] == cube[1][1][1]){
-				cube = rigntAlgo(cube,3);
+			
+			cube = colorFindLogicRignt(cube, 4);
+			/*if(cube[4][2][2] == cube[0][1][1] && cube[1][2][0] == cube[1][1][1]){
+				cube = rigntAlgo(cube,4);
 			}else{
 				System.out.println("cube[1][2][0] == cube[1][1][1]--------> possibility4 False, rotate D' & find correct center");
-			}
+			}*/
 		}
 
 		return cube;

@@ -83,7 +83,7 @@ class Roter_2_0{
 		};
 		
    //		Scan by user
-
+/*
 		 		Scanner scn = new Scanner(System.in);
 		char cubeTemp[][][] = new char[6][3][3];
 
@@ -111,7 +111,7 @@ class Roter_2_0{
 
 
 		cube = cubeTemp;
-      
+ */     
 		//cube = Roter_2_0.cube;  //class level variable call Or static variable call
 /**/	
 
@@ -140,10 +140,11 @@ class Roter_2_0{
 			 catch(MyException e){
 			System.out.println(e.toString());
 			cube = e.cube();
+			a=10;
 		 }
-//****************************** Step1 calling End ****************************
 
-		//after solve
+		//after solve Step1
+		System.out.println("...........after solve Step1.....");
 		for(int z=0; z<cube.length; z++){
 			System.out.println("\nFace: "+z);
 			for(int x=0; x<cube[z].length; x++){
@@ -154,33 +155,77 @@ class Roter_2_0{
 			}
 			System.out.println();
 		}
+
+//****************************** Step1 calling End ****************************
 
 
 //****************************** Step2 calling Start **************************		  
-		if(a==0){
+		if(a==10){
 				cube = RightFlip.flip(cube);
 				cube = RightFlip.flip(cube);
 				cube = MiddleFlip.flipV(cube);
 				cube = MiddleFlip.flipV(cube);
 				cube = LeftFlip.flipCounter(cube);
 				cube = LeftFlip.flipCounter(cube);
+			   
 			   cube = Step2.step2Main(cube);
-		  }
-//****************************** Step2 calling End ****************************		 																		   
-	
+			   a = 20;
+		
 
-
-		//after solve
-		for(int z=0; z<cube.length; z++){
-			System.out.println("\nFace: "+z);
-			for(int x=0; x<cube[z].length; x++){
-				for(int y=0; y<cube[z][x].length; y++){
-					System.out.print(cube[z][x][y]+ "  ");
+			//after solve Step2
+			System.out.println("...........after solve Step2.....");
+			for(int z=0; z<cube.length; z++){
+				System.out.println("\nFace: "+z);
+				for(int x=0; x<cube[z].length; x++){
+					for(int y=0; y<cube[z][x].length; y++){
+						System.out.print(cube[z][x][y]+ "  ");
+					}
+					System.out.println();
 				}
 				System.out.println();
 			}
-			System.out.println();
 		}
+
+//****************************** Step2 calling End ****************************		 																		   
+	
+
+//****************************** Step3 calling Start **************************		  
+		if(a==20){
+				cube = RightFlip.flip(cube);
+				cube = RightFlip.flip(cube);
+				cube = MiddleFlip.flipV(cube);
+				cube = MiddleFlip.flipV(cube);
+				cube = LeftFlip.flipCounter(cube);
+				cube = LeftFlip.flipCounter(cube);
+			   
+			   cube = Step3.step3Main(cube);
+			   a = 30;
+		  
+
+			//after solve Step3
+			System.out.println("...........after solve Step3.....");
+			for(int z=0; z<cube.length; z++){
+				System.out.println("\nFace: "+z);
+				for(int x=0; x<cube[z].length; x++){
+					for(int y=0; y<cube[z][x].length; y++){
+						System.out.print(cube[z][x][y]+ "  ");
+					}
+					System.out.println();
+				}
+				System.out.println();
+			}
+		}
+
+//****************************** Step3 calling End ****************************	
+
+
+
+
+
+
+
+
+
 
 
 
