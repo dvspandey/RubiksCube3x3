@@ -15,3 +15,13 @@ Imp Commands
 ============
 
 > git command for push into different to main branch. ---------> git push origin development
+
+ All about Cube!
+=================
+> Proper idea of Center pice
+> Proper idea of Edges
+> Proper idea of Corners
+> Rotations
+>  Solution Steps 
+
+https://github.com/dvspandey/RubiksCube3x3/blob/main/RubicsCube%20Document/RubicCube%20document%20V1.0.pdf
