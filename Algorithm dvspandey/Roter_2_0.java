@@ -157,8 +157,6 @@ class Roter_2_0{
 		}
 
 //****************************** Step1 calling End ****************************
-
-
 //****************************** Step2 calling Start **************************		  
 		if(a==10){
 				cube = RightFlip.flip(cube);
@@ -187,8 +185,6 @@ class Roter_2_0{
 		}
 
 //****************************** Step2 calling End ****************************		 																		   
-	
-
 //****************************** Step3 calling Start **************************		  
 		if(a==20){
 				cube = RightFlip.flip(cube);
@@ -217,8 +213,6 @@ class Roter_2_0{
 		}
 
 //****************************** Step3 calling End ****************************	
-
-
 //****************************** Step4 calling Start **************************		  
 		if(a==30){
 			
@@ -226,7 +220,7 @@ class Roter_2_0{
 			   a = 40;
 		  
 
-			//after solve Step3
+			//after solve Step4
 			System.out.println("...........after solve Step4.....");
 			for(int z=0; z<cube.length; z++){
 				System.out.println("\nFace: "+z);
@@ -241,6 +235,28 @@ class Roter_2_0{
 		}
 
 //****************************** Step4 calling End ****************************	
+//****************************** Step5 calling Start **************************		  
+		if(a==40){
+			
+			   cube = Step5.step5Main(cube);
+			   a = 50;
+		  
+
+			//after solve Step5
+			System.out.println("...........after solve Step5.....");
+			for(int z=0; z<cube.length; z++){
+				System.out.println("\nFace: "+z);
+				for(int x=0; x<cube[z].length; x++){
+					for(int y=0; y<cube[z][x].length; y++){
+						System.out.print(cube[z][x][y]+ "  ");
+					}
+					System.out.println();
+				}
+				System.out.println();
+			}
+		}
+
+//****************************** Step5 calling End ****************************	
 
 
 
