@@ -111,7 +111,7 @@ class Roter_2_0{
 
 
 		cube = cubeTemp;
- */     
+*/      
 		//cube = Roter_2_0.cube;  //class level variable call Or static variable call
 /**/	
 
@@ -217,6 +217,30 @@ class Roter_2_0{
 		}
 
 //****************************** Step3 calling End ****************************	
+
+
+//****************************** Step4 calling Start **************************		  
+		if(a==30){
+			
+			   cube = Step4.step4Main(cube);
+			   a = 40;
+		  
+
+			//after solve Step3
+			System.out.println("...........after solve Step4.....");
+			for(int z=0; z<cube.length; z++){
+				System.out.println("\nFace: "+z);
+				for(int x=0; x<cube[z].length; x++){
+					for(int y=0; y<cube[z][x].length; y++){
+						System.out.print(cube[z][x][y]+ "  ");
+					}
+					System.out.println();
+				}
+				System.out.println();
+			}
+		}
+
+//****************************** Step4 calling End ****************************	
 
 
 

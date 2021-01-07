@@ -1,5 +1,4 @@
-/* The White Corners
-   =================
+/*
 
 Yellow	<---upset to----> White 
 Blue	<---upset to----> Green
