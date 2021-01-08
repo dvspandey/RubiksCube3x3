@@ -1,4 +1,5 @@
 // Elements Selection
+var dashboard = document .querySelector('.dashboard');
 var greet = document.querySelector('.md-width-dash-upper h3');
 var face = document.querySelectorAll('.md-width-dash-faceContainer-inner-in .color-filler-rows-dash');
 var faceText = document.querySelectorAll('.md-width-dash-faceContainer-inner-in h3');
@@ -7,6 +8,8 @@ var finalBtn = document.querySelector('.color-filler button');
 var closebtn = document.getElementById('close');
 var errorlog = document.querySelector('.error');
 var closeErrorBtn = document.querySelector('.error h5');
+var solvebtn = document.querySelector('.btn-lg');
+var loaderscreen = document.querySelector('.loader');
 
 // Variables to use
 var color;
@@ -16,6 +19,8 @@ var faceName;
 for(var i =1;i<=6;i++){
     document.querySelector(`.color-picker-lower-box${i}`).addEventListener('click',selectColor);  //Selecting and adding event to each color
 }
+
+solvebtn.addEventListener('click',result);
 
 closeErrorBtn.addEventListener('click',closeErrorlog);
 
@@ -98,6 +103,14 @@ function openmodal(e){
     
 }
 
+function result(){
+    loaderscreen.style.display = 'block';
+    dashboard.style.display = 'none'
+    setTimeout(function(){
+        location.href = 'result.html';
+        loaderscreen.style.display = 'none';
+    },4000);
+}
 
 // Greetings code
 
