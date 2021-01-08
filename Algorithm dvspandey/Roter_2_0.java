@@ -83,7 +83,7 @@ class Roter_2_0{
 		};
 		
    //		Scan by user
-/*
+
 		 		Scanner scn = new Scanner(System.in);
 		char cubeTemp[][][] = new char[6][3][3];
 
@@ -111,7 +111,7 @@ class Roter_2_0{
 
 
 		cube = cubeTemp;
-*/      
+      
 		//cube = Roter_2_0.cube;  //class level variable call Or static variable call
 /**/	
 
@@ -184,7 +184,7 @@ class Roter_2_0{
 			}
 		}
 
-//****************************** Step2 calling End ****************************		 																		   
+//****************************** Step2 calling End ****************************		 																		  
 //****************************** Step3 calling Start **************************		  
 		if(a==20){
 				cube = RightFlip.flip(cube);
@@ -257,6 +257,28 @@ class Roter_2_0{
 		}
 
 //****************************** Step5 calling End ****************************	
+//****************************** Step6 calling Start **************************		  
+		if(a==50){
+			
+			   cube = Step6.step6Main(cube);
+			   a = 60;
+		  
+
+			//after solve Step6
+			System.out.println("...........after solve Step6.....");
+			for(int z=0; z<cube.length; z++){
+				System.out.println("\nFace: "+z);
+				for(int x=0; x<cube[z].length; x++){
+					for(int y=0; y<cube[z][x].length; y++){
+						System.out.print(cube[z][x][y]+ "  ");
+					}
+					System.out.println();
+				}
+				System.out.println();
+			}
+		}
+
+//****************************** Step6 calling End ****************************	
 
 
 
