@@ -427,6 +427,7 @@ body{
 .color-filler-row-dash{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    pointer-events: none;
 }
 .color-filler-box-dash{
     border: 2px solid black;
@@ -468,6 +469,7 @@ body{
 /* ValidationError styling */
 .errorDisplay{
     display: none;
+    animation: fade-in .9s;
 }
 .validationError{
     padding: 1rem;
@@ -620,6 +622,15 @@ body{
     }
     to{
         width: 90%;
+    }
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
 
