@@ -81,10 +81,10 @@ class Roter_2_0{
  
 		
 		};
-		
+/*		
    //		Scan by user
 
-		 		Scanner scn = new Scanner(System.in);
+		Scanner scn = new Scanner(System.in);
 		char cubeTemp[][][] = new char[6][3][3];
 
 		for(int z=0; z<cubeTemp.length; z++){
@@ -96,42 +96,24 @@ class Roter_2_0{
 			}
 		}
 
-
-		for(int z=0; z<cubeTemp.length; z++){
-			System.out.println("\nFace: "+z);
-			for(int x=0; x<cubeTemp[z].length; x++){
-				for(int y=0; y<cubeTemp[z][x].length; y++){
-
-					System.out.print(cubeTemp[z][x][y]+ "  ");
-				}
-				System.out.println();
-			}
-			System.out.println();
-		}
-
-
 		cube = cubeTemp;
-      
+
+*/	  
 		//cube = Roter_2_0.cube;  //class level variable call Or static variable call
 /**/	
 
-		// before  solve
-		for(int z=0; z<cube.length; z++){
-			System.out.println("\nFace: "+z);
-			for(int x=0; x<cube[z].length; x++){
-				for(int y=0; y<cube[z][x].length; y++){
-					System.out.print(cube[z][x][y]+ "  ");
-				}
-				System.out.println();
-			}
-			System.out.println();
-		}
+		// before  solve Display
+		cube = display(cube, 0);
 
 
 		int a = vaidCube(cube);
 		System.out.println("value of a: "+a);
 
+
+
 //****************************** Step1 calling Start **************************		  
+// SOLVE LAYER ONE – [STEP 1_ Create A Daisy + 3 STEP 2_ Create A White Cross With Matched Edges And Center Pieces]
+		  
 		  try{
 			  if(a==0){
 			   cube = Step1.step1Main(cube); //white cross at buttom
@@ -144,20 +126,12 @@ class Roter_2_0{
 		 }
 
 		//after solve Step1
-		System.out.println("...........after solve Step1.....");
-		for(int z=0; z<cube.length; z++){
-			System.out.println("\nFace: "+z);
-			for(int x=0; x<cube[z].length; x++){
-				for(int y=0; y<cube[z][x].length; y++){
-					System.out.print(cube[z][x][y]+ "  ");
-				}
-				System.out.println();
-			}
-			System.out.println();
-		}
+		cube = display(cube, 1);
 
 //****************************** Step1 calling End ****************************
 //****************************** Step2 calling Start **************************		  
+// SOLVE LAYER ONE – Step 3_ Solve The White Corners
+		
 		if(a==10){
 				cube = RightFlip.flip(cube);
 				cube = RightFlip.flip(cube);
@@ -171,21 +145,12 @@ class Roter_2_0{
 		
 
 			//after solve Step2
-			System.out.println("...........after solve Step2.....");
-			for(int z=0; z<cube.length; z++){
-				System.out.println("\nFace: "+z);
-				for(int x=0; x<cube[z].length; x++){
-					for(int y=0; y<cube[z][x].length; y++){
-						System.out.print(cube[z][x][y]+ "  ");
-					}
-					System.out.println();
-				}
-				System.out.println();
-			}
+			cube = display(cube, 2);
 		}
 
 //****************************** Step2 calling End ****************************		 																		  
 //****************************** Step3 calling Start **************************		  
+// SOLVE THE MIDDLE LAYER
 		if(a==20){
 				cube = RightFlip.flip(cube);
 				cube = RightFlip.flip(cube);
@@ -199,21 +164,13 @@ class Roter_2_0{
 		  
 
 			//after solve Step3
-			System.out.println("...........after solve Step3.....");
-			for(int z=0; z<cube.length; z++){
-				System.out.println("\nFace: "+z);
-				for(int x=0; x<cube[z].length; x++){
-					for(int y=0; y<cube[z][x].length; y++){
-						System.out.print(cube[z][x][y]+ "  ");
-					}
-					System.out.println();
-				}
-				System.out.println();
-			}
+			cube = display(cube, 3);
 		}
 
 //****************************** Step3 calling End ****************************	
 //****************************** Step4 calling Start **************************		  
+// SOLVE FINAL LAYER – Step 1_ Make A Yellow Cross
+
 		if(a==30){
 			
 			   cube = Step4.step4Main(cube);
@@ -221,21 +178,13 @@ class Roter_2_0{
 		  
 
 			//after solve Step4
-			System.out.println("...........after solve Step4.....");
-			for(int z=0; z<cube.length; z++){
-				System.out.println("\nFace: "+z);
-				for(int x=0; x<cube[z].length; x++){
-					for(int y=0; y<cube[z][x].length; y++){
-						System.out.print(cube[z][x][y]+ "  ");
-					}
-					System.out.println();
-				}
-				System.out.println();
-			}
+			cube = display(cube, 4);
 		}
 
 //****************************** Step4 calling End ****************************	
 //****************************** Step5 calling Start **************************		  
+// SOLVE FINAL LAYER – Step 2_ Orient the Corners
+		
 		if(a==40){
 			
 			   cube = Step5.step5Main(cube);
@@ -243,21 +192,13 @@ class Roter_2_0{
 		  
 
 			//after solve Step5
-			System.out.println("...........after solve Step5.....");
-			for(int z=0; z<cube.length; z++){
-				System.out.println("\nFace: "+z);
-				for(int x=0; x<cube[z].length; x++){
-					for(int y=0; y<cube[z][x].length; y++){
-						System.out.print(cube[z][x][y]+ "  ");
-					}
-					System.out.println();
-				}
-				System.out.println();
-			}
+			cube = display(cube, 5);
 		}
 
 //****************************** Step5 calling End ****************************	
 //****************************** Step6 calling Start **************************		  
+// SOLVE FINAL LAYER – Step 3_ Position The Yellow Corners
+		
 		if(a==50){
 			
 			   cube = Step6.step6Main(cube);
@@ -265,20 +206,23 @@ class Roter_2_0{
 		  
 
 			//after solve Step6
-			System.out.println("...........after solve Step6.....");
-			for(int z=0; z<cube.length; z++){
-				System.out.println("\nFace: "+z);
-				for(int x=0; x<cube[z].length; x++){
-					for(int y=0; y<cube[z][x].length; y++){
-						System.out.print(cube[z][x][y]+ "  ");
-					}
-					System.out.println();
-				}
-				System.out.println();
-			}
+			cube = display(cube, 6);
 		}
 
 //****************************** Step6 calling End ****************************	
+//****************************** Step7 calling Start **************************		  
+// SOLVE THE FINAL LAYER – Step 4_ Position The Yellow Edges
+		if(a==60){
+			
+			   cube = Step7.step7Main(cube);
+			   a = 70;
+		  
+
+			//after solve Step7
+			cube = display(cube, 7);
+		}
+
+//****************************** Step7 calling End ****************************	
 
 
 
@@ -358,7 +302,26 @@ class Roter_2_0{
 
 	}//end vaidCube
 
-	
+	static char[][][] display(char[][][] cube, int stepNo){
+		//------------------------------------------------------------------
+		System.out.println("...........after solve Step"+stepNo+".....");
+		for(int z=0; z<cube.length; z++){
+			System.out.println("\nFace: "+z);
+			for(int x=0; x<cube[z].length; x++){
+				for(int y=0; y<cube[z][x].length; y++){
+					System.out.print(cube[z][x][y]+ "  ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+
+
+		//------------------------------------------------------------------
+
+		return cube;
+	}// end display
 
 }//end Router_2.0 class 
 
