@@ -133,15 +133,32 @@ function openmodal(e){
     colorFillerContainer.style.display='block';
     if(e.target.id){
         faceName = e.target.id;
-        document.getElementById(`boxFiller${5}`).style.backgroundColor = document.getElementById(`boxFillerDash${faceName}${5}`).style.backgroundColor ;
 
-        document.getElementById(`boxFiller${5}`).style.border = '2px solid black';
-    }else{
+        // filling colors into model which already filled
+        for(var i=1;i<=9;i++){
+            document.getElementById(`boxFiller${i}`).style.backgroundColor = document.getElementById(`boxFillerDash${faceName}${i}`).style.backgroundColor ;
+
+            // checking that filled or not 
+
+            if(document.getElementById(`boxFillerDash${faceName}${i}`).style.backgroundColor !== ''){
+                document.getElementById(`boxFiller${i}`).style.border = '2px solid black';
+            }
+        } 
+      }else{
         var arr = e.target.textContent.split(" ");
         faceName=arr[0];
-        document.getElementById(`boxFiller${5}`).style.backgroundColor = document.getElementById(`boxFillerDash${faceName}${5}`).style.backgroundColor ;
 
-        document.getElementById(`boxFiller${5}`).style.border = '2px solid black';
+        // filling colors into model which already filled
+
+        for(var i=1;i<=9;i++){
+            document.getElementById(`boxFiller${i}`).style.backgroundColor = document.getElementById(`boxFillerDash${faceName}${i}`).style.backgroundColor ;
+
+            // checking that filled or not 
+
+            if(document.getElementById(`boxFillerDash${faceName}${i}`).style.backgroundColor !== ''){
+                document.getElementById(`boxFiller${i}`).style.border = '2px solid black';
+            }
+        }
     }
 }
 
@@ -188,3 +205,4 @@ function closeErrorDisplay(){
 
 var username = localStorage.getItem('username');
 greet.innerHTML = `Welcome ${username}`;
+
