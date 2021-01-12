@@ -1,5 +1,6 @@
 // Selecting Element
 
+var greet = document.querySelector('.md-width-dash-upper h3');
 var detailstep = document.querySelector('.detailStep');
 var step = document.querySelectorAll('.step');
 
@@ -28,3 +29,14 @@ function opendetailstep(e){
     }
     
 }
+
+
+// Greetings 
+var username = localStorage.getItem('username');
+greet.innerHTML = `Welcome ${username}`
+
+// Removing name of user when going back to home page 
+
+window.addEventListener('unload',()=>{
+    localStorage.removeItem('username');
+})
