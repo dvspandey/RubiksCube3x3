@@ -40,3 +40,4 @@ greet.innerHTML = `Welcome ${username}`
 window.addEventListener('unload',()=>{
     localStorage.removeItem('username');
 })
+
