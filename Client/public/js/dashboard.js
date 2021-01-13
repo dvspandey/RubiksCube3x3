@@ -26,6 +26,7 @@ var faceFilled = {
     Left:false,
     Right:false,
 };
+var arrFaceNames = ['Upper','Front','Right','Back','Left','Lower'];
 var colorCount = {
     red:0,
     green:0,
@@ -91,11 +92,7 @@ function finalColors(){
     for(var i =1;i<=9;i++){
        if(document.getElementById(`boxFiller${i}`).style.backgroundColor!==''){
             arr.push(document.getElementById(`boxFiller${i}`).style.backgroundColor);
-
-            // counting color used
-
-            colorCount[`${document.getElementById(`boxFiller${i}`).style.backgroundColor}`] = colorCount[`${document.getElementById(`boxFiller${i}`).style.backgroundColor}`] + 1;
-       }
+        }
     }
     
     if(arr.length!==9){
@@ -113,7 +110,7 @@ function finalColors(){
         closemodal();
         faceName = undefined;
     }
-
+    
     
 }
 
@@ -164,9 +161,26 @@ function openmodal(e){
 
 function result(){
     
+    // reset color value to 0 
+
+    for(nameofcolor in colorCount){
+        if(colorCount[nameofcolor]!==0){
+            colorCount[nameofcolor] = 0;
+        }
+    }
+    
+    // Counting the number of colors fullfilled 
+
+    arrFaceNames.map((value)=>{
+        for(var i=1;i<=9;i++){
+            colorCount[`${document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor}`] = colorCount[`${document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor}`] + 1;
+        }
+    })
+
     if(colorCount.red > 9 || colorCount.green > 9 || colorCount.blue > 9 || colorCount.orange > 9 || colorCount.white > 9 || colorCount.yellow > 9){
         errorDisplay.style.display = `block`;
         errorSound.play();
+
         // finding the name of color which used more than 9 times
         
         let colorNames = '';
@@ -179,7 +193,7 @@ function result(){
 
         // Modify text of validation error 
 
-        errorDisplay.childNodes[1].childNodes[1].textContent = `Only 9 times you can fill single color but you have filled${colorNames}`;
+        errorDisplay.childNodes[1].childNodes[1].textContent = `Total 9 times singal color can be filled but you have filled${colorNames}`;
 
     }else 
     if(faceFilled.Front !== true || faceFilled.Back !== true || faceFilled.Upper !== true || faceFilled.Lower !== true || faceFilled.Left !== true || faceFilled.Right !== true){
@@ -188,12 +202,60 @@ function result(){
         errorDisplay.childNodes[1].childNodes[1].textContent = 'Please fill all the faces';
     }
     else{
+        // creating variable which holds the data to be send 
+
+        var data = {
+            cube:[],
+            rotation:''
+        }
+
+        arrFaceNames.map((value)=>{
+            var facearr = [];
+            var valuearr = [];
+
+            // row 1 
+            for(var i=1;i<=3;i++){
+                valuearr.push((document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor)[0].toUpperCase())
+            }
+            facearr.push(valuearr);
+            valuearr = [];
+
+            // row 2 
+            for(var i=4;i<=6;i++){
+                valuearr.push((document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor)[0].toUpperCase())
+            }
+            facearr.push(valuearr);
+            valuearr = [];
+
+            // row 3 
+            for(var i=7;i<=9;i++){
+                valuearr.push((document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor)[0].toUpperCase())
+            }
+            facearr.push(valuearr);
+            data.cube.push(facearr);
+        })
+        
+        // Setting Headers to application/json 
+
+        const config={
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }
+
+        // Stringify data object into json 
+        const body = JSON.stringify(data);
+        
+        // start loading 
         loaderscreen.style.display = 'block';
         dashboard.style.display = 'none'
-        setTimeout(function(){
-            location.href = 'result.html';
+
+        // Sending request to server api 
+        axios.post('https://localhost:8080/java-servlet-json-rubiks-cube/steps',body,config).then((res)=>{
             loaderscreen.style.display = 'none';
-        },4000);
+            location.href = 'result.js';
+        })
+
     } 
 }
 
