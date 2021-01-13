@@ -26,7 +26,7 @@ var faceFilled = {
     Left:false,
     Right:false,
 };
-var arrFaceNames = ['Front','Back','Upper','Lower','Right','Left'];
+var arrFaceNames = ['Upper','Front','Right','Back','Left','Lower'];
 var colorCount = {
     red:0,
     green:0,
@@ -161,7 +161,7 @@ function openmodal(e){
 
 function result(){
     
-    // default color value to 0 
+    // reset color value to 0 
 
     for(nameofcolor in colorCount){
         if(colorCount[nameofcolor]!==0){
@@ -202,12 +202,60 @@ function result(){
         errorDisplay.childNodes[1].childNodes[1].textContent = 'Please fill all the faces';
     }
     else{
+        // creating variable which holds the data to be send 
+
+        var data = {
+            cube:[],
+            rotation:''
+        }
+
+        arrFaceNames.map((value)=>{
+            var facearr = [];
+            var valuearr = [];
+
+            // row 1 
+            for(var i=1;i<=3;i++){
+                valuearr.push((document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor)[0].toUpperCase())
+            }
+            facearr.push(valuearr);
+            valuearr = [];
+
+            // row 2 
+            for(var i=4;i<=6;i++){
+                valuearr.push((document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor)[0].toUpperCase())
+            }
+            facearr.push(valuearr);
+            valuearr = [];
+
+            // row 3 
+            for(var i=7;i<=9;i++){
+                valuearr.push((document.getElementById(`boxFillerDash${value}${i}`).style.backgroundColor)[0].toUpperCase())
+            }
+            facearr.push(valuearr);
+            data.cube.push(facearr);
+        })
+        
+        // Setting Headers to application/json 
+
+        const config={
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }
+
+        // Stringify data object into json 
+        const body = JSON.stringify(data);
+        
+        // start loading 
         loaderscreen.style.display = 'block';
         dashboard.style.display = 'none'
-        setTimeout(function(){
-            location.href = 'result.html';
+
+        // Sending request to server api 
+        axios.post('https://localhost:8080/java-servlet-json-rubiks-cube/steps',body,config).then((res)=>{
             loaderscreen.style.display = 'none';
-        },4000);
+            location.href = 'result.js';
+        })
+
     } 
 }
 
