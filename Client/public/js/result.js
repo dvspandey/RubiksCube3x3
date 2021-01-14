@@ -13,8 +13,8 @@ var idopen = {
     id:null,
     close:false
 }
-var data;
-
+var data =JSON.parse(localStorage.getItem('data'));
+console.log(data);
 // Adding event
 
 for(var i = 0; i<=7;i++){
@@ -45,6 +45,7 @@ function opendetailstep(e){
 
     var datastep = `s${e.target.id}`;
     insideDetailstep.innerHTML = data[0][datastep].myRotations;
+    
 
     // checking that rotation is empty or not 
 
@@ -59,7 +60,7 @@ function opendetailstep(e){
 }
 
 // Calling data from localStorage 
-data = localStorage.getItem('data');
+
 
 // Greetings 
 var username = localStorage.getItem('username');
