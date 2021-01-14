@@ -51,35 +51,26 @@ function opendetailstep(e){
     if(data[0][datastep].myRotations === ''){
         insideDetailstep.innerHTML = "No rotation to follow. Your Cube already solved !!"
     }
+
+    if(data[0].cubeStatus === 'cube is valid and Already solved!'){
+        insideDetailstep.innerHTML = "cube is valid and Already solved!"
+    }
     
 }
 
-
-// Making request get data from java server
-function fetchdata(){
-    dashboardResult.style.display = 'none';
-    loaderscreen.style.display = 'block';
-
-    axios.get('https://localhost:8080/java-servlet-json-rubiks-cube/steps').then(res=>{
-        data = res.data;
-        loaderscreen.style.display = 'none';
-        dashboardResult.style.display = 'block';
-    });
-}
+// Calling data from localStorage 
+data = localStorage.getItem('data');
 
 // Greetings 
 var username = localStorage.getItem('username');
 greet.innerHTML = `Welcome ${username}`
 
 
-// Calling fetchdata to fetch data from java server 
-
-fetchdata();
-
 // Removing name of user when going back to home page 
 
 window.addEventListener('unload',()=>{
     localStorage.removeItem('username');
+    localStorage.removeItem('data');
 });
 
 

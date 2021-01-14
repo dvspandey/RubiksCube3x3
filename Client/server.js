@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 // Init app 
 const app = express();
 
 // Using middleware to make public folder static 
+app.use(cors());
 app.use(express.static(path.join(__dirname ,'public')));
 
 const PORT = process.env.PORT || 5000;
