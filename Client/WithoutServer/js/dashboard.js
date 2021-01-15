@@ -323,7 +323,7 @@ function result(){
         dashboard.style.display = 'none';
 
         // Sending request to server api 
-        axios.post('https://dvspandey.herokuapp.com/steps',body,config).then((res)=>{
+        axios.post('../steps',body,config).then((res)=>{
             localStorage.setItem('data',JSON.stringify(res.data));
             location.href = 'result.html';
         });
