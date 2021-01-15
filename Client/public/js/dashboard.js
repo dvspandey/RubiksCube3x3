@@ -278,7 +278,7 @@ function result(){
 
         var data = {
             cube:[],
-            rotation:localStorage.getItem('username')
+            rotations:localStorage.getItem('username')
         }
 
         arrFaceNames.map((value)=>{
