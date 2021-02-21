@@ -1,0 +1,19 @@
+<!--    -->
+
+./UI-Dark
+
+./UI-Day
+
+#00203a
+
+
+       <!-- Default Servlet Configuration -->
+  <!--<servlet>
+  	<servlet-name>default</servlet-name>
+  	<servlet-class>com.dev.rubikscube.controller.DefaultServlet</servlet-class>
+  </servlet> -->
+  <!-- Servlet mapping -->
+ <!-- <servlet-mapping>
+  	<servlet-name>default</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping> -->
