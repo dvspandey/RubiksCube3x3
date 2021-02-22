@@ -1,33 +1,28 @@
-/*dvspandey Modified  For Night MOde*/
-
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 
 body{
-    color: #06090f;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     line-height: 1.5rem;
     
-    
+     
     /* Off User Selection to whole Page -- dvspandey  */
     user-select: none; /* supported by Chrome and Opera */
    -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
    -moz-user-select: none; /* Firefox */
    -ms-user-select: none; /* Internet Explorer/Edge */ 
-    
 }
 .welcome{
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #06090f; /*#EAF2FB; dvspandey*/
+    background-color: #EAF2FB;
 }
 .inner-welcome{
     width: 60%;
@@ -42,10 +37,10 @@ body{
     grid-gap: 1rem;
     margin-bottom: 2rem;
     margin-top: 1.5rem;
-    background-color: #06090f; /*dvspandey*/;
+    background-color: white;
     padding: 1rem 2rem;
     border-radius: 15px;
-    box-shadow: 1px 2px 11px 0px #505253/*b4bcc4ee; dvspandey*/
+    box-shadow: 0px 10px 30px 3px #b4bcc4ee;
 }
 .md-width img{
     width: 90%;
@@ -69,8 +64,8 @@ body{
     flex-direction: column;
     padding: 1rem 2rem;
     border-radius: 10px;
-    background-color: #06090f; /*dvspandey*/
-    box-shadow: 1px 2px 11px 0px #505253; /*dvspandey*/
+    background-color: white;
+    box-shadow: 0px 3px 20px  #b4bcc4ee;
 }
 .sm-width form label{
     font-family:'Hind', sans-serif;
@@ -92,8 +87,6 @@ body{
 .btn-md:hover{
     background: linear-gradient(169deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(17,187,223,1) 97%);
     opacity: 0.8;
-    position: relative;
-    width: 100%;
 }
 .sm-width form input:focus{
     border-bottom: 2px solid rgba(17,187,223,1);
@@ -106,14 +99,13 @@ body{
     letter-spacing: 5px;
     margin-bottom: .5rem;
 }
-.footer h6{
+.footer h3{
     margin: 3rem 0;
     text-align: center;
     font-family:'Hind', sans-serif;
     color: #576574;
-    /*font-size: 0.8rem;*/
+    font-size: 0.8rem;
     letter-spacing: 1px;
-    margin-top: 6rem;
 }
 
 @media(max-device-width: 1366px){
@@ -122,14 +114,7 @@ body{
     }
     .md-width img{
         width: 100%;
-        height: 100%;
-        /* dvspandey */
-
-        overflow: hidden;
-        height: 120px;
-        width: 250px;
-        padding: 4rem;
-        padding-top: 6rem;
+		overflow-y: hidden; /* dvspandey */
     }
     .sm-width{
         padding: 1rem;
@@ -155,12 +140,12 @@ body{
         font-size: 1.2rem;
     }
     .color-filler-rows-dash{
-        max-height: 8rem;
+        max-height: 9rem;
     }
     .btn-sm{
+        max-width: 10%;
         height: 3rem;
         font-size: 1rem;
-        width: fit-content;
     }
     .btn-lg{
         font-size: 1rem !important;
@@ -176,7 +161,7 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #06090f;
+    background-color: #EAF2FB;
 }
 .inner-dashboard{
     width: 60%;
@@ -189,10 +174,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #06090f; /*dvspandey*/
+    background-color: white;
     padding: 1rem 2rem;
     border-radius: 15px;
-    box-shadow: 1px 2px 11px 0px #505253;
+    box-shadow: 0px 10px 30px 3px #b4bcc4ee;
 }
 .md-width-dash-upper{
     width: 100%;
@@ -201,25 +186,14 @@ body{
 }
 .md-width-dash-upper img{
     text-align: center;
-    width: 100%;
-    height: 100%;
-    max-width: 150px;
-    max-height: 80px;
+    width: 12rem;
+    height: 55px;
 }
 .md-width-dash-upper h3{
-    /*font-family:'Hind', sans-serif;
+    font-family:'Hind', sans-serif;
     text-transform: uppercase;
     margin-top: .8rem;
     color:rgba(0,212,255,1);
-    border-bottom: 1px solid rgba(0,212,255,1);*/
-
-    /* dvspandey */
-    font-family: 'Source Sans Pro';   
-    text-transform: uppercase;
-    /* text-decoration: underline; */
-    font-size: 17px;
-    margin-top: 2rem;
-    color: rgb(189 198 210);
     border-bottom: 1px solid rgba(0,212,255,1);
 }
 .md-width-dash-upper-heading{
@@ -259,9 +233,8 @@ body{
     cursor: pointer;
 } */
 .md-width-dash-faceContainer-inner-in h3{
-    /*font-family:'Hind', sans-serif;*/
-    font-family: 'Nothing You Could Do', cursive; /* dvspandey */
-    color: #a8b9ce;
+    font-family:'Hind', sans-serif;
+    color: #373e46;
     cursor: pointer;
 }
 
@@ -270,21 +243,16 @@ body{
 .btn-md{
     color: white;
     font-family:'Hind', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.6rem;
     margin-top: 1rem;
     border-radius: 7px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(78, 8, 99) 100%); /*rgba(0,212,255,1) dvspandey*/
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     outline: none;
     border: none;
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
-    height: 2rem;
-    width: 12rem;
-    padding-bottom: 2rem;
-    position: relative; 
-    width: 100%;
 }
 .btn-lg{
     color: rgba(0,212,255,1);
@@ -309,7 +277,6 @@ body{
     margin: 1rem auto;
     text-align: center;
     width: 30%;
-    max-width: fit-content;
     padding: .5rem .6rem;
     font-family:'Hind', sans-serif;
     font-size: 1.1rem;
@@ -346,7 +313,7 @@ body{
     border-radius: 5px;
     /* height: 40%; */
     box-shadow:2px 4px 10px rgba(0, 0, 0, 0.315),-2px -4px 10px 3px rgba(0, 0, 0, 0.315);
-    background:#06090f;
+    background:#EAF2FB;
     display: grid;
     grid-template-rows: 1fr 6fr;
     transform: translate(-50%,-50%);
@@ -409,7 +376,7 @@ body{
     height: 50%;
     box-shadow:2px 4px 10px rgba(0, 0, 0, 0.315),-2px -4px 10px 3px rgba(0, 0, 0, 0.315);
     transform: translate(-50%,-50%);
-    background-color:#06090f;
+    background-color:#EAF2FB;
     animation-name:slowModal;
     animation-duration: .3s;
 }
@@ -492,9 +459,7 @@ body{
     pointer-events: none;
 }
 .color-filler-box-dash{
-    border: 1px solid rgb(255 255 255 / 50%); /* dvspandey */
-    margin: 1.5px; /* dvspandey */
-    /*border: 2px solid black;*/
+    border: 2px solid black;
 }
 
 
@@ -571,7 +536,7 @@ body{
     overflow-y: hidden;
     top: 0;
     left: 0;
-    background-color: #06090f;
+    background-color: white;
     display: none;
 }
 
@@ -584,8 +549,8 @@ body{
 .dots span{
     border-radius: 50%;
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     animation: bounce 0.7s infinite alternate;
 }
 .dots span:nth-child(1){
@@ -606,7 +571,7 @@ body{
     left: 50%;
     transform: translate(-50%,-55%);
     font-family: 'Hind', sans-serif;
-    font-size: 0.8rem;;
+    font-size: 1rem;
     color:#12a5ce;
 }
 
@@ -616,7 +581,7 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #06090f;
+    background-color: #EAF2FB;
 }
 
      /* List designing */
@@ -633,7 +598,7 @@ body{
     width: 80%;
     border-radius: 10px;
     box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.253);
-    background-color:#0d1117;
+    background-color:#25F69B;
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.2rem;
@@ -655,7 +620,7 @@ body{
 }
 .detailStep{
     /* border: 2px solid black; */
-    background-color: #c4c7ce;
+    background-color: #25f69b4f;
     display: none;
     height: 60px;
     width: 80%;
@@ -687,7 +652,7 @@ body{
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: .5rem;
-    color: #000000;
+    color: #0072A1;
     animation: fade-in 1s;
 }
 
@@ -745,33 +710,3 @@ body{
         transform: translate3d(0,-25px,0);
     }
 }
-
-
-/* ------------------------------------------------dvspandey------------------------------------------------------- */
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> For Scroll Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-/* For Scroll Bar */
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-    }
-    
-    /* Track */
-    ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(25, 123, 180); 
-    border-radius: 10px;
-    max-height: 3px;
-    }
-    
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-    background:#06252e; 
-    border-radius: 10px;
-    }
-    
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-    background: #0e4b5c; 
-    max-height: 3rem;
-    }
-
-    
