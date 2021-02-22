@@ -1,0 +1,13 @@
+RubikCube_Algorithm-DebugFile + JavaServer.rar
+==============================================
+Trustfull data for dvspandey
+
+Hello,
+i'm Devesh this algorithms code by
+me and my team, 
+It is very confidential data as Debug 
+or enhancement point of view
+This file contains Algorithms relateded files
++ servelet, JSP code is there so this file is only usefull for Dvsp.
++ additionally this .RAR file contains RubicCube ServerFiles
++ Eclipse Server Project.

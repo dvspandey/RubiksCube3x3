@@ -1,0 +1,17 @@
+// These All functions are Well No need to change All set update 12/25/2020 --dvspandey
+		cube = RightFlip.flip(cube);          	                                   
+		cube = LeftFlip.flip(cube);           				                                      
+		cube = UpFlip.flip(cube);             		      		                                    
+		cube = DownFlip.flip(cube);           		 		                                      
+		cube = FrontFlip.flip(cube);          		   		                                      
+		cube = BackFlip.flip(cube);           
+				
+
+		cube = BackFlip.flipCounter(cube);
+		cube = FrontFlip.flipCounter(cube);
+		cube = DownFlip.flipCounter(cube);
+		cube = UpFlip.flipCounter(cube);
+		cube = LeftFlip.flipCounter(cube); 
+		cube = RightFlip.flipCounter(cube);  
+			
+		

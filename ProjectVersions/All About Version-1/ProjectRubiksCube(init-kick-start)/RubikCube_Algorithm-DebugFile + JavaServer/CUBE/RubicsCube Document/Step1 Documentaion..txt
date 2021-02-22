@@ -1,0 +1,27 @@
+Step:1 The Daisy 
+=================
+[One center yellow pice + 4 white edge pices]
+
+> Start with holding your cube with yellow center pointing Up.
+> Look top layer first
+
+posibilities
+-------------
+	> If you start with no center edge on top face that's OK
+	> If you see any one white edge pice on top face so leave it as it is. 
+	> you might have some white pice on the top layer edge but that edge 2nd color is not white which touching yellow center.
+
+	> Next looking on the middle layer and you find a white edge pice and also up face have white edge on same why so, if you move this L/R then it 
+will pump the white edge pice of top face.
+So, all you need to do you just turn the up face U and create space on top face.
+	> If next edge pice at buttom edge so just need to face Twice R2/F2..
+	> if next edge pice at last buttom layer edge pice so just rotate the Up face U and create the space.and turn face twice.
+
+Algo
+-----
+	====> if you might have some white pice on the top layer edge but that edge 2nd color is not white which touching yellow center.Apply algo
+---> take that side into right side then,
+	-----> R'UF'
+
+
+ 

@@ -1,0 +1,9 @@
+heroku login
+
+heroku plugins:install java
+
+heroku war:deploy "E:\E drive(Study,clg,programming)\IDEAS\Project-RubiksCube3x3\java-servlet-json-rubiks-cube7.war" --app dvspandey
+
+
+heroku war:deploy "E:\E drive(Study,clg,programming)\IDEAS\Project-RubiksCube3x3\RubiksCube-v2.war" --app dvspandey
+Url: https://dvspandey.herokuapp.com/

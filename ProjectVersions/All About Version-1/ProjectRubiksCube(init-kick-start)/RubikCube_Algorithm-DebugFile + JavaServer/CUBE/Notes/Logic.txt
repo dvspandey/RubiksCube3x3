@@ -1,0 +1,107 @@
+	 001
+010	(011) 	 012
+	 021
+
+if(cube is valid ) then
+
+if(white in top){
+	leave it as it is.
+	top(000,001,002,010,fix[011],012,020,021,022),(00,01,02)*4 ----> in face(1,2,3,4)
+			
+}
+
+middle((10,fix[11],12)*4 ----> in face(1,2,3,4))
+
+buttom(500,501,502,510,fix[511],512,520,521,522),(20,21,22)*4 ----> in face(1,2,3,4)
+
+---------------------------------------- Logic -----------------------------------------------------------
+
+
+//top(000,001,002,010,fix[011],012,020,021,022),(00,01,02)*4 ----> in face(1,2,3,4)
+//top
+		for(int z=0; z<1; z++){ //top
+			for(int x=0; x<cube[z].length; x++){
+				for(int y=0; y<cube[z][x].length; y++){
+					if(x==1 && y==1){
+						continue;
+					}
+					System.out.print(" cube["+z+"]["+x+"]["+y+"]  :" + cube[z][x][y]);
+					
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+
+(00,01,02)*4 ----> in face(1,2,3,4)
+
+		for(int z=1; z<5; z++){
+			for(int x=0; x<1; x++){
+				for(int y=0; y<cube[z][x].length; y++){
+
+					System.out.print(" cube["+z+"]["+x+"]["+y+"]  :" + cube[z][x][y]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+
+
+***************************************************************************************************
+//------------------------Middle layer-------------------------------------				
+//middle((10,fix[11],12)*4 ----> in face(1,2,3,4))
+//middle
+
+		for(int z=1; z<5; z++){
+			for(int x=1; x<2; x++){
+				for(int y=0; y<cube[z][x].length; y++){
+					if(x==1 && y==1){
+						continue;
+					}
+					System.out.print(" cube["+z+"]["+x+"]["+y+"]  :" + cube[z][x][y]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+
+
+
+***************************************************************************************************
+//buttom
+//buttom(500,501,502,510,fix[511],512,520,521,522),(20,21,22)*4 ----> in face(1,2,3,4)
+
+		for(int z=5; z<cube.length; z++){ 
+			for(int x=0; x<cube[z].length; x++){
+				for(int y=0; y<cube[z][x].length; y++){
+					if(x==1 && y==1){
+						continue;
+					}
+					System.out.print(" cube["+z+"]["+x+"]["+y+"]  :" + cube[z][x][y]);
+					
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+
+
+
+
+//(20,21,22)*4 ----> in face(1,2,3,4)
+
+		for(int z=1; z<5; z++){
+			for(int x=2; x<3; x++){
+				for(int y=0; y<cube[z][x].length; y++){
+
+					System.out.print(" cube["+z+"]["+x+"]["+y+"]  :" + cube[z][x][y]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
