@@ -1,0 +1,72 @@
+> get ready a class eg:Roter
+	> Which call all methods
+	> and sends a cube refrence and sends a string variale
+		Or (pass a POJO class Object)
+	> take all these object refrences to a differen variables
+	> at last call that roter class refrence variables
+		from UserService class and convert that refrence
+		into arraylist
+	> and from servlet we convert that object data into json and sends to clinte!
+
+
+Pojo class structure
+====================
+> private char[][][] cube;
+> private String rotations;
+
+
+Request
+========
+> take colors in json format and process and conert into 
+	three dimensions char array and send that char[][][]
+	refrence to roter class,
+>  then roter class call step1,step2,step3,step4,step5,step6,step7,step8 and sends that cube refrence with a POJO class object refrence.
+> and after each and every steps take rerence ariable which holeds (string variable refrence)rotations
+	> step1Rotations
+	> step2Rotations
+	> step3Rotations
+	> step4Rotations
+	> step5Rotations
+	> step6Rotations
+	> step7Rotations
+	> step8Rotations
+
+then send that variable "step?Rotations" back to service class.
+then service class conert then into arryList and 
+then servlet take these list and send as a responce.
+
+
+			
+///////////////////////////////////////////////////////////////
+
+
+
+
+step2 = new DataJB(cube);
+		cube = step2.getCube();
+		step3 = new DataJB(cube);
+		cube = step3.getCube();
+		step4 = new DataJB(cube);
+		cube = step4.getCube();
+		step5 = new DataJB(cube);
+		cube = step5.getCube();
+		step6 = new DataJB(cube);
+		cube = step6.getCube();
+		step7 = new DataJB(cube);
+		cube = step7.getCube();
+		step8 = new DataJB(cube);
+		cube = step8.getCube();
+
+
+
+https://www.java67.com/2017/05/how-to-convert-json-string-to-java-object-gson-example.html
+
+An HTTP request URL contains the following parts:
+http://[host]:[port][request-path]?[query-string]
+
+
+
+String json = "{ 'cube':[[['G','B','W'],['R','Y','B'],['W','Y','G']],[['G','O','R'],['R','B','G'],['B','Y','R']],[['W','Y','B'],['O','R','B'],['W','W','O']],[['O','O','O'],['W','G','R'],['Y','O','G']],[['Y','Y','O'],['B','O','G'],['R','G','R']],[['B','W','Y'],['R','W','W'],['B','G','Y']]], 'rotations':''}";
+
+
+[{'cube':[[['G','B','W'],['R','Y','B'],['W','Y','G']],[['G','O','R'],['R','B','G'],['B','Y','R']],[['W','Y','B'],['O','R','B'],['W','W','O']],[['O','O','O'],['W','G','R'],['Y','O','G']],[['Y','Y','O'],['B','O','G'],['R','G','R']],[['B','W','Y'],['R','W','W'],['B','G','Y']]]}]

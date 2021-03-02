@@ -1,0 +1,39 @@
+Version 1:-
+	> Created from Skretch & Implement Project idea develop some logics as bussiness logic which have direct reflection of project idea to solve rubiksCube just in 7 steps.
+	> Develop a light UI which contains 3 main pages.
+		> Welcom page [index.html]
+			> Here we greeting a user.
+			> Take User's name for proceed further steps
+			> Name will visible by throughout the project 			for that perticular user. 
+		>  Take-Input [Dashboard.html]
+			> Here we are trying to getting idea about user actual scrumbled cube via taking input color of cube tiles.
+			> Here Also varify that cube color is this cube is valid for process further or Not using JavaScript code.
+			> if all Good then using JavaScript we form a JSON format data to send through network to server for proccessing.					> This format data is a represents virtual cube  exactly which is reflet to user's actual cube which is in the hand of the user.
+		> Result-Output [result.html]
+ 			> Here we are Give 7 Steps to solve a actual rubiks cube with proper instructions.
+			> U U' 
+			> F F'
+			> R R'
+			> B B'
+			> L L'
+			> D D'
+			> V V' [middle layer] use only when cube rotate 180*
+			> H H' [middle layer] use only when cube rotate 180*
+
+Version 1.1 :- 
+==============
+Modify format of result from server side and possiblly reduce repeated steps. | also add New method whic prepareSteps() which helps to reduce the steps.
+
+Version 1.2 :- 
+============
+Adding some Midea-queries for responsiveness for laptops
+
+Version 2 :- 
+==========
+Released New Version with DARk theam and also Adding admin panel using File System
+
+
+
+Add Ons
+=======
+	> using Database create admin panel because file system data is loss and other issues occuring
