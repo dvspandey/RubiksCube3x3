@@ -1,4 +1,6 @@
 # RubiksCube3x3
+## [Documentation](https://github.com/dvspandey/RubiksCube3x3/blob/main/RubicsCube%20Document/RubicCube%20document%20V1.0.pdf)
+
 Give details of 6 faces of 3x3 Rubik's Cube and get a solution in terms of Rotation Steps 
 
 Yellow	<---upset to----> White 
@@ -24,4 +26,4 @@ Imp Commands
 > Rotations
 >  Solution Steps 
 
-https://github.com/dvspandey/RubiksCube3x3/blob/main/RubicsCube%20Document/RubicCube%20document%20V1.0.pdf
+
