@@ -1,6 +1,6 @@
 # RubiksCube3x3
 
-### Deployment Link:: https://dvspandey.herokuapp.com/
+### Deployment Link:: [https://cubesolvo.dvs.com](https://dvspandey.herokuapp.com/UI-Dark/indexDark.html)
 #### Documentation:: [https://github.com/dvspandey/RubiksCube3x3/documentation](https://github.com/dvspandey/RubiksCube3x3/blob/main/RubicsCube%20Document/RubicCube%20document%20V1.0.pdf)
 
 Give details of 6 faces of 3x3 Rubik's Cube and get a solution in terms of Rotation Steps 
